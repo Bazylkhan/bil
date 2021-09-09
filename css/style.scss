@@ -1,0 +1,142 @@
+@import "nullStyle.scss";
+$mainColor: #F60D8B;
+
+%gradStyle {
+    background: rgb(244, 184, 206);
+    background: linear-gradient(90deg, rgba(244, 184, 206, 1) 0%, rgba(201, 244, 247, 1) 100%);
+}
+
+%glassStyle {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(4.0px);
+    -webkit-backdrop-filter: blur(4.0px);
+}
+
+* {
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
+    color: #000;
+}
+
+body {
+    @extend %gradStyle;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+
+.section__container {
+    padding: 0 10px;
+    margin: 15px auto 0;
+}
+
+.content__section {
+    flex: 0 1 33%;
+    height: 640px;
+    border-radius: 4px;
+    @extend %glassStyle;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+}
+
+.content__section-name {
+    font-size: 22px;
+    margin: 0 auto;
+}
+
+.content__section-header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 20px;
+    @extend %glassStyle;
+    position: sticky;
+    top: 0;
+
+    img {
+        width: 12px;
+        margin: 0px 5px 0px 0px;
+
+    }
+    .screenButton{
+        width: 30px;
+        margin: 0px 0px 0px 5px;
+    }
+}
+
+.content__elem {
+    display: flex;
+    flex-direction: column;
+}
+
+.content__elem-inner {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 55px;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+
+.content__elem-text {
+    width: 100%;
+    margin-left: 15px;
+    border-bottom: 2px solid #fff;
+}
+
+
+
+
+
+.folder{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 55px;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+
+.file{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: 85%;
+    cursor: pointer;
+    >li {
+        display: flex;
+        align-items: center;
+        height: 55px;
+        margin-bottom: 35px;
+    }
+}
+.file{
+    display: none;
+}
+.file.active{
+    display: block;
+}
+
+
+@import "header.scss";
+@import "blog.scss";
+@import "burger.scss";
+@import "breakpoints.scss";
+@import "maxScreen.scss";
